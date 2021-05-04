@@ -49,4 +49,11 @@ yfw.get('/costumeagent', function(req,res) {
     });
 })
 
+yfw.get('/wireless', function(req,res) {
+    let query = `select * from wirelessvision`;
+    pool.query(query).then((response) => {
+        res.json(response.rows);
+    });
+})
+
 module.exports = yfw;
